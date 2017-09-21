@@ -7,9 +7,12 @@
     "start": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
+    "body-parser": "^1.18.1",
     "cross-env": "^5.0.5",
     "express": "^4.15.4",
     "graphql": "^0.9.3",
+    "graphql-server-express": "^1.1.2",
+    "graphql-tools": "^1.2.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "latest",
     "prop-types": "^15.5.8",
