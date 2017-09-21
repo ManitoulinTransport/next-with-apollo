@@ -2,7 +2,7 @@
   "name": "next-with-apollo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server",
+    "dev": "nodemon server",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server"
   },
@@ -19,5 +19,8 @@
   },
   "author": "Matthew Brunetti <mbrunetti@manitoulintransport.com>",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
 }

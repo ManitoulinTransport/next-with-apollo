@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "watch": [
+    "package.json",
+    "package-lock.json",
+    "next.config.js",
+    "server"
+  ],
+  "ext": "*"
+}
