@@ -1,6 +1,9 @@
 {
   "name": "next-with-apollo",
   "version": "1.0.0",
+  "author": "Matthew Brunetti <mbrunetti@manitoulintransport.com>",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
     "dev": "nodemon server",
     "build": "next build",
@@ -21,9 +24,6 @@
     "react-apollo": "^1.1.3",
     "react-dom": "^15.5.4"
   },
-  "author": "Matthew Brunetti <mbrunetti@manitoulintransport.com>",
-  "license": "UNLICENSED",
-  "private": true,
   "devDependencies": {
     "nodemon": "^1.12.1"
   }
