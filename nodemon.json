@@ -4,7 +4,8 @@
     "package.json",
     "package-lock.json",
     "next.config.js",
-    "server"
+    "server",
+    "schema"
   ],
   "ext": "*"
 }
