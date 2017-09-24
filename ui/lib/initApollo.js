@@ -1,8 +1,6 @@
 import {ApolloClient, createNetworkInterface} from 'react-apollo'
-const graphql = require('graphql')
-const {createLocalInterface} = require('apollo-local-query')
 import fetch from 'isomorphic-fetch'
-const schema = require('../schema') // TODO: Exclude this from client-side bundles !important!
+import config from '../config'
 
 let apolloClient = null
 
@@ -12,14 +10,9 @@ if (!process.browser) {
 }
 
 function create (initialState) {
-  const networkInterface = process.browser
-      ? createNetworkInterface({
-          uri: `${global.location.origin}/graphql`, // Server URL (must be absolute)
-      })
-      : createLocalInterface(graphql, schema)
   return new ApolloClient({
     initialState,
-    networkInterface,
+    networkInterface: createNetworkInterface({uri: `${config.apiBaseUrl}/graphql`}),
     ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
   })
 }
