@@ -20,7 +20,9 @@ function UserList ({ data: { loading, error, users } }) {
     <div>
       {users.map(user => (
         <div key={user.id}>
-          <span>{user.username} ({user.firstName} {user.lastName})</span>
+          <span>
+            {user.username} ({user.firstName} {user.lastName})
+          </span>
           -
           <span>{user.company}</span>
         </div>

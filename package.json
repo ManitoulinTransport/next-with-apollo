@@ -7,9 +7,13 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
-    "dev": "lerna run dev --parallel"
+    "dev": "lerna run dev --parallel",
+    "lint": "eslint \"**/*.js\"",
+    "format": "prettier-eslint --write \"**/*.js\""
   },
   "devDependencies": {
-    "lerna": "^2.2.0"
+    "lerna": "^2.2.0",
+    "prettier-eslint-cli": "^4.3.2",
+    "standard": "^10.0.3"
   }
 }

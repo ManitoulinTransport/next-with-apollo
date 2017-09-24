@@ -1,4 +1,4 @@
-import {ApolloClient, createNetworkInterface} from 'react-apollo'
+import { ApolloClient, createNetworkInterface } from 'react-apollo'
 import fetch from 'isomorphic-fetch'
 import config from '../config'
 
@@ -12,7 +12,9 @@ if (!process.browser) {
 function create (initialState) {
   return new ApolloClient({
     initialState,
-    networkInterface: createNetworkInterface({uri: `${config.apiBaseUrl}/graphql`}),
+    networkInterface: createNetworkInterface({
+      uri: `${config.apiBaseUrl}/graphql`,
+    }),
     ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
   })
 }
