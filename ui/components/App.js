@@ -1,5 +1,10 @@
+import Head from 'next/head'
 export default ({ children }) => (
   <main>
+    <Head>
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <link rel='icon' type='image/png' href='/static/favicon.ico' />
+    </Head>
     {children}
     <style jsx global>{`
       * {
