@@ -5,19 +5,25 @@ Two things (should branch to separate)
     - proof-of-concept of moving parts for either reusable half-stack (a) boilerplate or (b) framework
 
 Features
-- GraphQL/Apollo
-    - Organizes our domain models (Domain Driven Development)
-    - (mostly?) transparent bridge for data between front-end and back-end, allowing you to declare what data you need from the model
-    - Realtime
-    - Efficient batching and cacheing
-    - New direction of meteor (wildly popular full-stack framework) authors (apollo = modular framework)
+- API
+    - GraphQL/Apollo
+        - Organizes and distributes our domain models
+        - An implementation of GraphQL
+        - (mostly?) transparent bridge for data between front-end and back-end, allowing you to declare what data you need from the model
+        - enables Domain Driven Development
+        - Realtime capable
+        - Efficient batching and cacheing
+        - (New direction authors of meteor, the wildly popular full-stack framework .. apollo == modular framework)
+    - Express
 - ReactJS
-    - declarative & idiomatic view layer, all in JS (no new templating language semantics)
+    - view layer: declarative, concise & idiomatic
+    - Component-Driven Development
     - Best ecosystem for UI components today
-- Next.js (the UI framework)
-    - Bundles many powerful libraries (e.g. Webpack, Babel) into 1 full-stack minimal-configuration framework
-    - Simple, easy to use, well-documented, well supported
-    - Server-side rendering
+    - Interesting community applying it (e.g. GraphQL/Apollo folks)
+- Next.js
+    - UI framework built on ReactJS
+    - Bundles many powerful libraries (e.g. Webpack, Babel) into one minimal-configuration framework
+    - Simple, easy to use, well-documented, well support
 - Extensible API server (e.g. add ad-hoc Remote Procedure Calls) & UI Server (e.g. add ad-hoc file upload handler)
 
 Choose your own
@@ -25,13 +31,10 @@ Choose your own
 - CSS/Style framework (recommend semantic-ui-react?)
 - Localization (recommend i18next?)
 
-Swap out
+Should be easy to swap out:
 - API server framework (e.g. express -> micro)
 - Test framework(s)
 
-## Notes
-
-- nodemon isn't watching shared `util/` folder (see nodemon.json)
 
 ## TODO
 

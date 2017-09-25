@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests to run.\" && exit 0",
+    "dev": "nodemon",
+    "start": "cross-env NODE_ENV=production node ."
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.4",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "graphql": "^0.9.3",
+    "graphql-server-express": "^1.1.2",
+    "graphql-tools": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
