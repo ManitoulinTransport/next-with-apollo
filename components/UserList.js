@@ -1,4 +1,4 @@
-import apolloData from '../lib/apolloData'
+import apolloData from '../lib/ui/apolloData'
 import ErrorMessage from './ErrorMessage'
 
 const UserListData = apolloData(

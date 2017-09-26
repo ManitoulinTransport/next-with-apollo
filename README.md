@@ -5,16 +5,17 @@ Two things (should branch to separate)
     - proof-of-concept of moving parts for either reusable half-stack (a) boilerplate or (b) framework
 
 Features
-- API
-    - GraphQL/Apollo
-        - Organizes and distributes our domain models
-        - An implementation of GraphQL
-        - (mostly?) transparent bridge for data between front-end and back-end, allowing you to declare what data you need from the model
-        - enables Domain Driven Development
-        - Realtime capable
-        - Efficient batching and cacheing
-        - (New direction authors of meteor, the wildly popular full-stack framework .. apollo == modular framework)
-    - Express
+- GraphQL/Apollo
+    - Organizes and distributes our domain models
+    - An implementation of GraphQL
+    - (mostly?) transparent bridge for data between front-end and back-end, allowing you to declare what data you need from the model
+    - enables Domain Driven Development
+    - Realtime capable
+    - Efficient batching and cacheing
+    - (New direction authors of meteor, the wildly popular full-stack framework .. apollo == modular framework)
+- ExpressJS
+    - Extensibility (e.g. add ad-hoc Remote Procedure Calls) & UI Server (e.g. add ad-hoc file upload handler)
+    - Best ecosystem for plugins or "middlewares"
 - ReactJS
     - view layer: declarative, concise & idiomatic
     - Component-Driven Development
@@ -24,7 +25,6 @@ Features
     - UI framework built on ReactJS
     - Bundles many powerful libraries (e.g. Webpack, Babel) into one minimal-configuration framework
     - Simple, easy to use, well-documented, well support
-- Extensible API server (e.g. add ad-hoc Remote Procedure Calls) & UI Server (e.g. add ad-hoc file upload handler)
 
 Choose your own
 - Database and or ORM
@@ -39,7 +39,8 @@ Should be easy to swap out:
 ## TODO
 
 - authentication & authorization
-
+- Reactive persistent data
+- MobX for LOCAL data reactivity
 - Use all the goodies from apollo-universal-starter-kit
 - Go through http://dev.apollodata.com to fine-tune everything
 - `recompose`?
