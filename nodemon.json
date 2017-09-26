@@ -1,6 +1,7 @@
 {
   "verbose": true,
   "watch": [
+    "data/**/*.*",
     "models/**/*.*",
     "schema/**/*",
     "index.js"

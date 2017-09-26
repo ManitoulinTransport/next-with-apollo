@@ -1,4 +1,5 @@
 // TODO: Update dependencies in package.json
+// TODO: Use `eslint-plugin-graphql`
 const express = require('express')
 const { graphqlExpress, graphiqlExpress } = require('graphql-server-express') // TODO: Change to `apollo-server-express`
 const next = require('next')
@@ -21,7 +22,16 @@ async function main () {
   server.disable('x-powered-by')
 
   // Apollo request handlers
-  server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
+  server.use(
+    '/graphql',
+    bodyParser.json(),
+    graphqlExpress(req => {
+      const context = {
+        user: req.user,
+      }
+      return { schema, context }
+    })
+  )
   if (config.isDev) {
     server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
   }
