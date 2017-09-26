@@ -3,6 +3,7 @@
     "standard",
     "standard-jsx"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "comma-dangle": [
       "error",
