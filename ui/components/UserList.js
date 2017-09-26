@@ -1,8 +1,8 @@
-import { gql, graphql } from 'react-apollo'
+import apolloData from '../lib/apolloData'
 import ErrorMessage from './ErrorMessage'
 
-const userListQuery = gql`
-  query UserListQuery {
+const UserListData = apolloData(
+  `query UserListQuery {
     users {
       id
       company
@@ -10,29 +10,28 @@ const userListQuery = gql`
       firstName
       lastName
     }
-  }
-`
+  }`
+)
 
-function UserList ({ data: { loading, error, users } }) {
-  if (loading) return <p>Loading...</p>
-  if (error) return <ErrorMessage message='Error loading users.' />
+export default function UserList () {
   return (
-    <div>
-      {users.map(user => (
-        <div key={user.id}>
-          <span>
-            {user.username} ({user.firstName} {user.lastName})
-          </span>
-          -
-          <span>{user.company}</span>
-        </div>
-      ))}
-    </div>
+    <UserListData
+      options={{ pollInterval: 1000 }}
+      render={({ loading, error, users }) => {
+        if (loading) return <p>Loading...</p>
+        if (error) return <ErrorMessage message='Error loading users.' />
+        return (
+          <div>
+            {users.map(user => (
+              <div key={user.id}>
+                {user.username} ({user.firstName} {user.lastName})
+                {' - '}
+                {user.company}
+              </div>
+            ))}
+          </div>
+        )
+      }}
+    />
   )
 }
-
-export default graphql(userListQuery, {
-  options: {
-    pollInterval: 1000,
-  },
-})(UserList)
