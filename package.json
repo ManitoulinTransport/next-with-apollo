@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "author": "Matthew Francis Brunetti",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ManitoulinTransport/next-with-apollo.git"
+  },
+  "engines": {
+    "node": "^8.4.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests to run.\" && exit 0",
