@@ -1,21 +1,32 @@
+const sha1 = require('sha1')
+
 const usersWithoutIds = [
   {
     company: 'MANITOULIN',
     username: 'mbrunetti',
+    type: 'ADMIN',
     firstName: 'Matthew1111',
     lastName: 'Brunetti',
+    activeDirectoryDomain: 'SECURE.MANITOULINTRANSPORT.COM',
+    encryptedPassword: null,
   },
   {
     company: 'MULTIMODAL',
     username: 'mbrunetti',
+    type: 'CUSTOMER',
     firstName: 'Matthew2222',
     lastName: 'Brunetti',
+    activeDirectoryDomain: 'SECURE.MANITOULINTRANSPORT.COM',
+    encryptedPassword: null,
   },
   {
     company: 'MANITOULIN',
     username: 'bwright',
+    type: 'EMPLOYEE',
     firstName: 'Beverly3333',
     lastName: 'Wright',
+    activeDirectoryDomain: null,
+    encryptedPassword: sha1('1234'),
   },
 ]
 
@@ -36,8 +47,14 @@ const getUsersWithIds = () => {
 }
 
 module.exports = {
-  list (viewer) {
-    console.log('data/user.js list(viewer)', { viewer })
-    return getUsersWithIds()
+  async list (viewer) {
+    let result = getUsersWithIds()
+    if (!viewer || viewer.type !== 'ADMIN') {
+      result = result.map(user => ({...user, company: 'redacted'}))
+    }
+    return result
+  },
+  async get (viewer, id) {
+    return getUsersWithIds().find(user => user.id === id)
   },
 }

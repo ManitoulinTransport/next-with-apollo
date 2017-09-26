@@ -1,11 +1,22 @@
-# Our "user" type
+# Our types of users
+enum UserType {
+    ADMIN
+    CUSTOMER
+    EMPLOYEE
+    PARTNER
+    SALES
+}
+
+# Our user model
 type User {
     id: ID!
     # The subsidiary company the user belongs to
     company: String!
     username: String!
+    type: UserType!
     firstName: String!
     lastName: String!
+    activeDirectoryDomain: String
 }
 
 type Query {
