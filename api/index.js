@@ -12,6 +12,7 @@ async function main () {
   const dev = process.env.NODE_ENV !== 'production'
 
   const server = express()
+  server.disable('x-powered-by')
   server.use(cors())
   server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
   if (dev) {
