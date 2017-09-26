@@ -1,3 +1,4 @@
+// TODO: Refactor to use render-props pattern instead of HOC pattern
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ApolloProvider, getDataFromTree } from 'react-apollo'
