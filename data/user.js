@@ -50,7 +50,7 @@ module.exports = {
   async list (viewer) {
     let result = getUsersWithIds()
     if (!viewer || viewer.type !== 'ADMIN') {
-      result = result.map(user => ({...user, company: 'redacted'}))
+      result = result.map(user => ({ ...user, company: 'redacted' }))
     }
     return result
   },

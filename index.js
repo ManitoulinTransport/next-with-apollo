@@ -1,6 +1,7 @@
 // TODO: Update dependencies in package.json
 // TODO: Use `eslint-plugin-graphql`
 // TODO: Use `compression`
+// TODO: Modularize (api vs ui; components for reuse across projects)
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const expressSession = require('express-session')
@@ -31,6 +32,7 @@ async function main () {
     '/api',
     cookieParser(),
     expressSession({
+      // TODO: Use a mysql based session store
       store: new (sessionFileStore(expressSession))({
         path: '.sessions',
         ttl: 3600, // 1 hour
@@ -47,8 +49,8 @@ async function main () {
   // Request handler for debugging server state
   if (config.isDev) {
     server.get('/api/debug', (req, res) => {
-      const {session, user} = req
-      res.json({session, user})
+      const { session, user } = req
+      res.json({ session, user })
     })
   }
 
