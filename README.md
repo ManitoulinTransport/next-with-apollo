@@ -42,3 +42,15 @@ Choose your own
     - use apollo-test-utils & graphql-tools
     - Jest, enzyme & (for snapshot testing) enzyme-to-json
 - add babel config file, webpack config file, next.config.js (easy)
+
+## Resources
+
+- "container vs component?" https://github.com/reactjs/redux/issues/756
+    - https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+- render-props (a.k.a. children-as-a-function)
+    - https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce
+- code comments and documentation
+    - https://dev.to/raddikx/dont-document-your-code-code-your-documentation/comments/2hi
+- frameworks vs boilerplates vs code generators vs libraries/modules
+    - https://medium.com/@nmaro/staart-a-starter-library-for-node-js-projects-with-user-accounts-d1328b46a59
+- a modular framework, https://github.com/Raynos/mercury
