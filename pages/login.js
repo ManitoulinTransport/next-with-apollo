@@ -1,10 +1,10 @@
 import React from 'react'
 import App from '../components/App'
 import Header from '../components/Header'
-import withApollo from '../lib/ui/withApollo'
+import withApolloData from '../lib/ui/apollo/withApolloData'
 import { loginWithUsernameAndPassword } from '../lib/ui/auth'
 
-export default withApollo(
+export default withApolloData(
   class extends React.Component {
     static async getInitialProps (context, apolloClient) {}
     handleSubmit (event) {

@@ -1,9 +1,9 @@
 import App from '../components/App'
 import Header from '../components/Header'
 import UserList from '../components/UserList'
-import withApollo from '../lib/ui/withApollo'
+import withApolloData from '../lib/ui/apollo/withApolloData'
 
-export default withApollo(props => (
+export default withApolloData(props => (
   <App>
     <Header pathname={props.url.pathname} />
     <UserList />

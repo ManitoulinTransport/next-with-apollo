@@ -1,7 +1,7 @@
-import apolloData from '../lib/ui/apolloData'
+import createApolloDataContainer from '../lib/ui/apollo/createApolloDataContainer'
 import ErrorMessage from './ErrorMessage'
 
-const UserListData = apolloData(
+const UserListData = createApolloDataContainer(
   `query UserListQuery {
     users {
       id
