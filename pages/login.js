@@ -6,7 +6,9 @@ import { loginWithUsernameAndPassword } from '../lib/ui/auth'
 
 export default withApolloData(
   class extends React.Component {
-    static async getInitialProps (context, apolloClient) {}
+    static async getInitialProps (context, { apolloClient, reduxStore }) {
+      // ...
+    }
     handleSubmit (event) {
       event.preventDefault()
       const username = event.target.username.value
