@@ -1,8 +1,6 @@
-# Full-stack Apollo + Next.js
+# Generic Apollo + Next.js stack
 
-Two things (should branch to separate)
-    - proof-of-concept of full-stack for MT Direct Next (v4)
-    - proof-of-concept of moving parts for either reusable half-stack (a) boilerplate or (b) framework
+Also some things specific to MT Direct 4
 
 Features
 - GraphQL/Apollo
@@ -31,26 +29,16 @@ Choose your own
 - CSS/Style framework (recommend semantic-ui-react?)
 - Localization (recommend i18next?)
 
-Should be easy to swap out:
-- API server framework (e.g. express -> micro)
-- Test framework(s)
-
-
 ## TODO
 
 - authentication & authorization
+- Offline support for Apollo
 - Reactive persistent data
-- MobX for LOCAL data reactivity
+- MobX for data reactivity
+- reactive session/cookie/localStorage data
 - Use all the goodies from apollo-universal-starter-kit
 - Go through http://dev.apollodata.com to fine-tune everything
-- `recompose`?
-- Splitting things out (in respect to both file/folder structure & repo/package structure)
-    - API (GraphQL+RPC server app), UI (Next.js app), and shared code (running multiple semver-major API versions would be amazing for a fwe reasons)
-        - enable cors
-    - Different projects/features/functions
 - add mocking & test framework(s)
     - use apollo-test-utils & graphql-tools
     - Jest, enzyme & (for snapshot testing) enzyme-to-json
 - add babel config file, webpack config file, next.config.js (easy)
-- add eslint + prettier (easy)
-- add inline documentation framework? (easy)

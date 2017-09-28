@@ -48,7 +48,7 @@ async function main () {
 
   // Request handler for debugging server state
   if (config.isDev) {
-    server.get('/api/debug', (req, res) => {
+    server.get('/api/rest/debug', (req, res) => {
       const { session, user } = req
       res.json({ session, user })
     })
@@ -56,7 +56,7 @@ async function main () {
 
   // Authentication (i.e. login and logout) request handlers
   server.post(
-    '/api/auth/login/usernameAndPassword',
+    '/api/rest/auth/login/usernameAndPassword',
     bodyParser.json(),
     (req, res, next) => {
       passport.authenticate('usernameAndPassword', (error, user, info) => {
@@ -76,7 +76,7 @@ async function main () {
       })(req, res, next)
     }
   )
-  server.post('/api/auth/logout', (req, res, next) => {
+  server.post('/api/rest/auth/logout', (req, res, next) => {
     req.logOut()
     res.send({ success: true })
   })
@@ -93,7 +93,10 @@ async function main () {
     })
   )
   if (config.isDev) {
-    server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+    server.use(
+      '/api/graphiql',
+      graphiqlExpress({ endpointURL: '/api/graphql' })
+    )
   }
 
   // Next.js request handler
