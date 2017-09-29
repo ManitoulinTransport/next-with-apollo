@@ -56,10 +56,10 @@ async function main () {
 
   // Authentication (i.e. login and logout) request handlers
   server.post(
-    '/api/rest/auth/login/usernameAndPassword',
+    '/api/rest/auth/login/:strategy',
     bodyParser.json(),
     (req, res, next) => {
-      passport.authenticate('usernameAndPassword', (error, user, info) => {
+      passport.authenticate(req.params.strategy, (error, user, info) => {
         if (error) {
           next(error)
         } else if (!user) {
