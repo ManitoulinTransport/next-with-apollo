@@ -57,4 +57,7 @@ module.exports = {
   async get (viewer, id) {
     return getUsersWithIds().find(user => user.id === id)
   },
+  async getViewer (viewer) {
+    return viewer
+  },
 }

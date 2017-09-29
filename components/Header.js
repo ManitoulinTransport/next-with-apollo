@@ -1,18 +1,25 @@
 import Link from 'next/link'
+import LogoutButton from './LogoutButton'
 
-export default ({ pathname }) => (
+export default ({ url, currentUser }) => (
   <header>
     <Link prefetch href='/'>
-      <a className={pathname === '/' && 'is-active'}>Home</a>
+      <a className={url.pathname === '/' && 'is-active'}>Home</a>
     </Link>
 
     <Link prefetch href='/about'>
-      <a className={pathname === '/about' && 'is-active'}>About</a>
+      <a className={url.pathname === '/about' && 'is-active'}>About</a>
     </Link>
 
-    <Link prefetch href='/login'>
-      <a className={pathname === '/login' && 'is-active'}>Log in</a>
-    </Link>
+    <span className='float-right'>
+      {currentUser ? (
+        <LogoutButton />
+      ) : (
+        <Link prefetch href='/login'>
+          <a className={url.pathname === '/login' && 'is-active'}>Login</a>
+        </Link>
+      )}
+    </span>
 
     <style jsx>{`
       header {
@@ -25,6 +32,9 @@ export default ({ pathname }) => (
       }
       .is-active {
         text-decoration: underline;
+      }
+      .float-right {
+        float: right;
       }
     `}</style>
   </header>

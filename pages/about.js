@@ -1,9 +1,10 @@
 import App from '../components/App'
 import Header from '../components/Header'
+import withApolloData from '../lib/ui/apollo/withApolloData'
 
-export default props => (
+export default withApolloData(({ url, currentUser }) => (
   <App>
-    <Header pathname={props.url.pathname} />
+    <Header url={url} currentUser={currentUser} />
     <article>
       <h1>The Idea Behind This Example</h1>
       <p>
@@ -38,4 +39,4 @@ export default props => (
       </p>
     </article>
   </App>
-)
+))

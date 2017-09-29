@@ -20,5 +20,6 @@ type User {
 }
 
 type Query {
+    currentUser: User
     users: [User]
 }
