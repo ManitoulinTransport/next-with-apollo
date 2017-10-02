@@ -10,7 +10,7 @@
   "engines": {
     "node": "^8.4.0"
   },
-  "main": "index.js",
+  "main": "framework/index.js",
   "scripts": {
     "test": "echo \"No tests to run.\" && exit 0",
     "dev": "nodemon",

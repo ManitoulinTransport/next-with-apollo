@@ -3,7 +3,7 @@
 
 import React from 'react'
 import { withApollo } from 'react-apollo'
-import { logout } from '../lib/ui/auth'
+import { logout } from '../framework/ui/auth'
 
 class LogoutButton extends React.Component {
   render () {

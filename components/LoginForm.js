@@ -1,6 +1,6 @@
 import React from 'react'
 import { withApollo } from 'react-apollo'
-import { login } from '../lib/ui/auth'
+import { login } from '../framework/ui/auth'
 
 class LoginForm extends React.Component {
   render () {

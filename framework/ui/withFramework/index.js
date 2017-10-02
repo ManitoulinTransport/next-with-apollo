@@ -26,9 +26,9 @@ async function getCurrentUser (apolloClient) {
   return queryResult.data.currentUser
 }
 
-export default function withApolloData (ComposedComponent) {
-  return class WithApolloData extends React.Component {
-    static displayName = `WithApolloData(${getComponentDisplayName(
+export default function withFramework (ComposedComponent) {
+  return class WithFramework extends React.Component {
+    static displayName = `WithFramework(${getComponentDisplayName(
       ComposedComponent
     )})`
     static propTypes = {

@@ -1,7 +1,7 @@
 const passportLocal = require('passport-local')
 const ActiveDirectory = require('activedirectory')
 const sha1 = require('sha1')
-const pCall = require('../../../pCall')
+const pCall = require('../../../shared/pCall')
 const userData = require('../../../../data/user') // TODO: Referencing a data object so far into lib/ feels dirty... make it a config?
 
 const activeDirectoryCache = {}

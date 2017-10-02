@@ -2,10 +2,10 @@ import React from 'react'
 import App from '../components/App'
 import Header from '../components/Header'
 import LoginForm from '../components/LoginForm'
-import withApolloData from '../lib/ui/apollo/withApolloData'
-import redirect from '../lib/ui/next/redirect'
+import withFramework from '../framework/ui/withFramework'
+import redirect from '../framework/ui/redirect'
 
-export default withApolloData(
+export default withFramework(
   class extends React.Component {
     static async getInitialProps (context) {
       if (context.currentUser) {

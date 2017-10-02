@@ -1,9 +1,9 @@
 import App from '../components/App'
 import Header from '../components/Header'
 import UserList from '../components/UserList'
-import withApolloData from '../lib/ui/apollo/withApolloData'
+import withFramework from '../framework/ui/withFramework'
 
-export default withApolloData(({ url, currentUser }) => (
+export default withFramework(({ url, currentUser }) => (
   <App>
     <Header url={url} currentUser={currentUser} />
     <UserList />

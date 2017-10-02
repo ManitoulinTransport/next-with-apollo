@@ -1,4 +1,4 @@
-import createApolloDataContainer from '../lib/ui/apollo/createApolloDataContainer'
+import createApolloDataContainer from '../framework/ui/createApolloDataContainer'
 import ErrorMessage from './ErrorMessage'
 
 const UserListData = createApolloDataContainer(

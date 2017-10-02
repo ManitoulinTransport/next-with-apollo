@@ -4,7 +4,8 @@
     "data/**/*.*",
     "models/**/*.*",
     "schema/**/*",
-    "index.js"
+    "framework/api/**/*",
+    "framework/index.js"
   ],
   "ext": "*"
 }

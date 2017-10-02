@@ -9,10 +9,10 @@ const sessionFileStore = require('session-file-store')
 const { graphqlExpress, graphiqlExpress } = require('graphql-server-express') // TODO: Change to `apollo-server-express`
 const next = require('next')
 const bodyParser = require('body-parser')
-const passport = require('./lib/api/passport')
-const schema = require('./schema/index')
-const pCall = require('./lib/pCall')
-const config = require('./config')
+const passport = require('./api/passport/index')
+const schema = require('../schema/index')
+const pCall = require('./shared/pCall')
+const config = require('../config')
 
 main()
 
